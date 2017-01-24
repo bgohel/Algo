@@ -1,0 +1,93 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct A
+{
+	int rollno;
+	char name[20];
+	float marks;
+	struct A *next;
+};
+typedef struct A ST;
+void add_beg(ST **);
+void read(ST**ptr);
+void print(ST *);
+void save(ST *);
+int count(ST *);
+main()
+{
+	char ch;
+	ST *headptr=0;
+	int c=0;
+	do
+	{
+		add_beg(&headptr);
+		//add_end(&headptr);
+		//add_middle(&headptr);
+		printf("Do you want to continue or not....(y/Y)?");
+		scanf(" %c",&ch);
+	}while(ch=='y'||ch=='Y');
+
+	c=count(headptr);
+	printf("count nodes=%d\n",c);
+	print(headptr);
+	save(headptr);
+}
+int count(ST *p)
+{
+	int c=0;
+	while(p)
+	{
+		c++;
+		p=p->next;
+	}
+	return c;
+}
+
+void add_beg(ST **ptr)
+{
+	ST *temp;
+	temp=malloc(sizeof(ST));
+	printf("Enter the Roll no...\n");
+	scanf("%d",&temp->rollno);
+	printf("Enter the name...\n");
+	scanf("%s",temp->name);
+	printf("Enter the marks...\n");
+	scanf("%f",&temp->marks);
+
+	temp->next=*ptr;
+	*ptr=temp;
+}
+void print(ST *p)
+{
+	while(p)
+	{
+		printf("%d %s %f\n",p->rollno,p->name,p->marks);
+		p=p->next;
+	}
+}
+
+void save(ST *ptr)
+{
+	FILE *fp;
+	fp=fopen("data","w");
+	while(ptr)
+	{
+		fprintf(fp,"%d %s %f",ptr->rollno,ptr->name,ptr->marks);
+		ptr=ptr->next;
+	}
+	fclose(fp);
+}
+
+void read(ST** ptr)
+{
+
+
+
+
+
+
+
+
+
+
+}
