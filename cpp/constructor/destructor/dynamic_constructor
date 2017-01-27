@@ -1,0 +1,67 @@
+#include<iostream>
+using namespace std;
+
+class A
+{
+	int x,y;
+	public:
+	A():x(10),y(20)
+	{
+		cout<<"default Constructor"<<endl;
+	}
+	A(int a,int b):x(a),y(b)
+	{
+		cout<<"parameterized Constructor"<<endl;
+	}
+	void print(void)
+	{
+		cout<<"X = "<< x << "  Y ="<< y <<endl;
+	}
+	A(A &obj)
+	{
+		cout<<"copy constructor"<<endl;
+	}
+};	
+
+int main()
+{
+	A *obj1=new A;//obj()--->default constructor invoked
+
+	obj1->print();
+
+	(*obj1).print();
+
+
+	cout<<"Before deallocation"<<endl;
+	cout<<"& obj1....="<<&obj1<<endl;
+	delete obj1;
+	cout<<"After deallocation"<<endl;
+	cout<<"& obj1....="<<&obj1<<endl;
+
+
+
+
+	cout<<"---------------------------------------------------------------------------------------------------------------------------\n";
+
+
+	A *obj2=new A(100,200);//parameterized constructor invoked
+
+	obj2->print();
+
+	(*obj2).print();
+
+
+	//cout<<"& obj2....="<<&obj2<<endl;
+
+	cout<<"Before deallocation"<<endl;
+	cout<<"& obj2....="<<&obj2<<endl;
+	delete obj2;
+	cout<<"After deallocation"<<endl;
+	cout<<"& obj2....="<<&obj2<<endl;
+
+
+	//new A(11,22);
+	//A *obj=new A(11,22);
+
+}
+
