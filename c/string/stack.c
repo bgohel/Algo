@@ -6,7 +6,8 @@ int main()
 {
 	int i=0,op;
 	char ch;
-	printf("Enter the option \n");
+
+jump:	printf("Enter the option 1) push 2) pop 3) exit \n");
 	scanf("%d",&op);
 
 	switch(op)
@@ -25,7 +26,7 @@ int main()
 				printf("Do you want push..?\n");
 				scanf(" %c",&ch);
 			}while(ch == 'y' || ch == 'Y');
-
+		goto jump;
 		case 2:
 			do
 			{
@@ -39,7 +40,7 @@ int main()
 				printf("Do you want to pop..?\n");
 				scanf(" %c",&ch);
 			}while(ch == 'y' || ch == 'Y');
-
+		goto jump;
 		case 3:
 			exit(0);
 		default : printf("wrong Input\n");
