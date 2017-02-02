@@ -1,3 +1,6 @@
+//here first of all base class constructor will first call then derived class constructor will call
+// and for destructor is called in reverse order of the constructor call
+
 #include<iostream>
 using namespace std;
 class A
