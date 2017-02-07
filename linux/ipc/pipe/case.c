@@ -5,7 +5,7 @@ main()
 {
 	int p[2];
 	pipe(p);
-int i;
+	int i;
 	if(fork()==0)
 	{
 		char b[20];
@@ -14,8 +14,6 @@ int i;
 		if(b[i]>='a' && b[i]<='z')
 		b[i]=b[i]-32;
 		write(p[1],b,strlen(b)+1);
-		
-
 	}
 	else
 	{
@@ -23,12 +21,8 @@ int i;
 		printf("Enter the Data...\n");
 		scanf("%s",a);
 		write(p[1],a,strlen(a)+1);
-	sleep(1);
+		sleep(1);
 		read(p[0],a,sizeof(a));
 		printf("data..%s\n",a);
-
-
 	}
-
-
 }
