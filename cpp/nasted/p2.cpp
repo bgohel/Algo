@@ -2,7 +2,6 @@
 using namespace std;
 class A
 {
-
 		private:
 		int x;
 		public:
@@ -44,5 +43,5 @@ b1.print1();*/
 A::B b;
 b.y=1000;
 b.print1();
-a.print();
+//a.print();
 }

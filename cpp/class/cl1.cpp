@@ -32,7 +32,7 @@ class A
 main()
 {
 	A obj1,obj2,obj3;
-	cout<<A::x<<endl;
+///	cout<<A::x<<endl;
 	obj1.set(10,20);
 	obj1.print();
 //	A::x=55,A::y=66;//Invalid error

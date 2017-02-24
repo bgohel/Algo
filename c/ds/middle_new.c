@@ -15,7 +15,10 @@ void print(ST *);
 void delete(ST **,int);
 int count(ST *);
 void del_all(ST **);
+void delall(ST **);
 void recursiveReverse(ST **);
+void rec_rev(ST **);
+void printNthFromLast(ST *, int);
 int main()
 {
 	ST *head=0;
@@ -38,9 +41,15 @@ int main()
 	
 //	printf("nodes in this data structure is - %d\n",count(head));
 //	del_all(&head);
-	recursiveReverse(&head);
-	printf("nodes in this data structure is - %d\n",count(head));
+	//recursiveReverse(&head);
+//	rec_rev(&head);
+//	printf("nodes in this data structure is - %d\n",count(head));
+
+//	delall(&head);
+//	printf("Data After del_all\n");
+	printf("Data At node\n");
 	print(head);
+	printNthFromLast(head,2);
 
 }
 
@@ -184,8 +193,7 @@ void del_all(ST **ptr)
 
 void recursiveReverse(ST ** head_ref)
 {
-	ST* first;
-	ST* rest;
+	ST* first,*rest;
 	
 	/* empty list */
 	if (*head_ref == NULL)
@@ -210,4 +218,84 @@ void recursiveReverse(ST ** head_ref)
 	/* fix the head pointer */
 	*head_ref = rest;			 
 }
+
+
+void rec_rev(ST **ptr)
+{
+	ST* first,*rest;
+
+	if(*ptr==0)
+		return;
+
+	first=*ptr;
+	rest=first->next;
+
+	if(rest==0)
+		return;
+
+	rec_rev(&rest);
+
+	first->next->next=first;
+	first->next=NULL;
+
+
+	*ptr=rest;
+
+}
+void delall(ST **ptr)
+{
+        ST *cur,*nxt;
+        cur =*ptr;
+        while(cur)
+        {
+                nxt=cur->next;
+                free(cur);
+                cur=nxt;
+        }
+
+        *ptr=NULL;
+}
+
+void printNthFromLast(ST *head, int n)
+{
+        ST *main_ptr = head;
+        ST *ref_ptr = head;
+
+        int count = 0,p=0;
+        if(head != NULL)
+        {
+                while( count < n )
+                {
+                        if(ref_ptr == NULL)
+                        {
+                                printf("%d is greater than the no. of "
+                                                "nodes in list", n);
+                                return;
+                        }
+			
+			//point the referencr pointer to the next of n -> if n = 4 , ref at 5 pos from the beg
+                        ref_ptr = ref_ptr->next;
+                        count++;
+                } /* End of while*/
+
+
+              printf("ref-data %d\n ",ref_ptr->no);
+			
+			//in next while loop
+			//shift the main ptr as per the ref , and then print the data from the beg only 
+			//ref will reach at the end here
+
+                while(ref_ptr != NULL)
+                {
+                        p++;
+                        main_ptr = main_ptr->next;
+                        ref_ptr = ref_ptr->next;
+                }
+                printf("p - %d\n",p);
+                printf("Node no. %d from last is %d ",n, main_ptr->no);
+        }
+}
+
+
+
 

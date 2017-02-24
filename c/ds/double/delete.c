@@ -9,8 +9,8 @@ struct st
 typedef struct st DLL;
 void add_middle(void);
 void print(void);
-void rev(void);
-DLL *headptr;//by default 0
+void delete_node(int);
+DLL *hptr;//by default 0
 main()
 {
 	char ch;
@@ -28,9 +28,10 @@ main()
 	//	add_beg();
 	printf("__________________________________________\n");
 	print();
-	rev();
+	
+	delete_node(20);
 	print();
-
+	
 }
 
 void add_middle(void)
@@ -46,19 +47,19 @@ void add_middle(void)
 	temp->prev=0;
 	///////////////////////////////////////////////////////////
 
-	if(headptr==0)
+	if(hptr==0)
 	{
-		headptr=temp;
+		hptr=temp;
 	}
-	else if((temp->n)<(headptr->n))
+	else if((temp->n)<(hptr->n))
 	{
-		temp->next=headptr;
-		headptr->prev=temp;
-		headptr=temp;
+		temp->next=hptr;
+		hptr->prev=temp;
+		hptr=temp;
 	}
 	else
 	{
-		temp1=headptr;
+		temp1=hptr;
 		while(temp1)
 		{
 			if(temp1->next==0)
@@ -83,7 +84,7 @@ void add_middle(void)
 void print(void)
 {
 	DLL *ptr;
-	ptr=headptr;
+	ptr=hptr;
 	while(ptr)
 	{
 
@@ -92,20 +93,37 @@ void print(void)
 	}
 	printf("\n");
 }
-void rev(void)
+
+void delete_node(int no)
 {
-	DLL  *temp,*cur;
+	DLL *temp,*temp1;
+	temp=hptr;
 
-	cur=headptr;
-
-	while(cur)
+	while(temp)
 	{
-		temp=cur->prev;
-		cur->prev=cur->next;
-		cur->next=temp;
-		cur=cur->prev;
+		if(temp->n==no)
+		{
+			if(temp==hptr)
+			{
+				hptr=temp->next;
+				free(temp);
+				return;
+			}
+			else if (temp->next==0)
+			{
+				temp1->next=temp->next;
+				free(temp);
+				return;
+			}
+			else
+			{
+				temp->next->prev=temp1->next;
+				temp->prev->next=temp->next;
+				free(temp);
+				return;
+			}
+		}
+		temp1=temp;
+		temp=temp->next;
 	}
-
-	if(temp!=NULL)
-		headptr=temp->prev;
 }

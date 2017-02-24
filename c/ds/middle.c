@@ -3,8 +3,8 @@
 struct A
 {
 	int rollno;
-	char name[20];
-	float marks;
+//	char name[20];
+//	float marks;
 	struct A *next;
 };
 typedef struct A ST;
@@ -13,6 +13,7 @@ void add_middle(ST **);
 void add_end(ST **);
 void print(ST *);
 void save(ST *);
+void del_all(ST**);
 int count(ST *);
 main()
 {
@@ -28,10 +29,12 @@ main()
 		scanf(" %c",&ch);
 	}while(ch=='y'||ch=='Y');
 
-	c=count(headptr);
-	printf("count nodes=%d\n",c);
+//	c=count(headptr);
+//	printf("count nodes=%d\n",c);
 	print(headptr);
-	save(headptr);
+	del_all(&headptr);
+	print(headptr);
+//	save(headptr);
 }
 int count(ST *p)
 {
@@ -50,10 +53,10 @@ void add_beg(ST **ptr)
 	temp=malloc(sizeof(ST));
 	printf("Enter the Roll no...\n");
 	scanf("%d",&temp->rollno);
-	printf("Enter the name...\n");
-	scanf("%s",temp->name);
-	printf("Enter the marks...\n");
-	scanf("%f",&temp->marks);
+//	printf("Enter the name...\n");
+//	scanf("%s",temp->name);
+//	printf("Enter the marks...\n");
+//	scanf("%f",&temp->marks);
 
 	temp->next=*ptr;
 	*ptr=temp;
@@ -62,7 +65,8 @@ void print(ST *p)
 {
 	while(p)
 	{
-		printf("%d %s %f\n",p->rollno,p->name,p->marks);
+		printf("%d\n",p->rollno);
+		//printf("%d %s %f\n",p->rollno,p->name,p->marks);
 		p=p->next;
 	}
 }
@@ -150,7 +154,20 @@ void add_middle(ST **ptr)
 			}
 			temp1=temp1->next;
 		}
+	}
+}
 
+void del_all(ST **ptr)
+{
+	ST *cur,*nxt;
+	cur =*ptr;
+	while(cur)
+	{
+		nxt=cur->next;
+		free(cur);
+		cur=nxt;
 	}
 
+	*ptr=NULL;
 }
+

@@ -12,20 +12,20 @@ void print(void);
 DLL *headptr;//by default 0
 main()
 {
-char ch;
+	char ch;
 
-do
-{
-add_beg();
+	do
+	{
+		add_beg();
 
-printf("do you Want another node........(y/Y)?");
-scanf(" %c",&ch);
+		printf("do you Want another node........(y/Y)?");
+		scanf(" %c",&ch);
 
-}while(ch=='y'||ch=='Y');
+	}while(ch=='y'||ch=='Y');
 
-//	add_beg();
-//	add_beg();
-//	add_beg();
+	//	add_beg();
+	//	add_beg();
+	//	add_beg();
 
 	print();
 	printf("__________________________________________\n");
@@ -59,7 +59,7 @@ void add_beg(void)
 void print(void)
 {
 	DLL *ptr;
-ptr=headptr;
+	ptr=headptr;
 	while(ptr)
 	{
 

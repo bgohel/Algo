@@ -3,15 +3,15 @@ using namespace std;
 class A
 {
 
-		private:
+	private:
 		int x;
 		class B
 		{
 			public:
-			
+
 				int y;
 		}b;
-public:
+	public:
 		void set(void)
 		{
 			x=10,b.y=20;
@@ -25,8 +25,8 @@ public:
 };
 int main()
 {
-A a;
-a.set();
-a.print();
+	A a;
+	a.set();
+	a.print();
 
 }
