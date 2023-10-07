@@ -1,0 +1,6 @@
+[submodule "CORTEX_M"]
+	path = CORTEX_M
+	url = https://github.com/niekiran/CortexMxProgramming
+[submodule "RTOS"]
+	path = RTOS
+	url = https://github.com/niekiran/MasteringRTOS
