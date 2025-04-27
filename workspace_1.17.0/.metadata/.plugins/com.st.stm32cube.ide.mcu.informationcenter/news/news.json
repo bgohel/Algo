@@ -1,0 +1,12 @@
+data='[ \
+	{ \
+		"image": "news/Visual-1_WikiTips_Tricks.png", \
+		"link": "", \
+		"caption": "" \
+	}, \
+	{ \
+		"image": "news/Visual-2_CMakeProject.png", \
+		"link": "", \
+		"caption": "" \
+	} \
+]';

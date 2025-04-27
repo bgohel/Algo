@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 18 resources" deleteContents="false" description="Delete 18 resources" element1="/fault_gen" element10="/bit_banding" element11="/operation_modes" element12="/access_levels" element13="/svc_operation" element14="/stack" element15="/interrupt_priority" element16="/HelloWorld" element17="/svc_number" element18="/cmsis_task_scheduler" element2="/exception_entry_exit" element3="/task_scheduler" element4="/HelloWorld_semihosting" element5="/USART3_int_pend" element6="/inline_1" element7="/Source_code" element8="/t-bit" element9="/RemoteSystemsTempFiles" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="18" stamp="1742112759319"/>
+</session>

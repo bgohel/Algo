@@ -4,3 +4,6 @@
 [submodule "RTOS"]
 	path = RTOS
 	url = https://github.com/niekiran/MasteringRTOS
+[submodule "Embedded_C"]
+	path = Embedded_C
+	url = https://github.com/niekiran/Embedded-C/

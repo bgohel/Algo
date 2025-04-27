@@ -1,0 +1,10 @@
+13:57:06 **** Incremental Build of configuration Debug for project Fault Reg ****
+make -j12 all 
+arm-none-eabi-size  Fault\ Reg.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3656	     92	   1900	   5648	   1610	Fault Reg.elf
+Finished building: default.size.stdout
+ 
+
+13:57:06 Build Finished. 0 errors, 0 warnings. (took 210ms)
+
