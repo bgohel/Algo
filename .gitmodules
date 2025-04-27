@@ -10,3 +10,6 @@
 [submodule "MasteringMCU"]
 	path = MasteringMCU
 	url = https://github.com/niekiran/MasteringMCU.git
+[submodule "MasteringMCU2"]
+	path = MasteringMCU2
+	url = https://github.com/niekiran/MasteringMCU2
