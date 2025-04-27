@@ -7,3 +7,6 @@
 [submodule "Embedded_C"]
 	path = Embedded_C
 	url = https://github.com/niekiran/Embedded-C/
+[submodule "MasteringMCU"]
+	path = MasteringMCU
+	url = https://github.com/niekiran/MasteringMCU.git
