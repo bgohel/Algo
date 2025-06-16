@@ -13,3 +13,6 @@
 [submodule "MasteringMCU2"]
 	path = MasteringMCU2
 	url = https://github.com/niekiran/MasteringMCU2
+[submodule "BootloaderProjectSTM32"]
+	path = BootloaderProjectSTM32
+	url = https://github.com/niekiran/BootloaderProjectSTM32
